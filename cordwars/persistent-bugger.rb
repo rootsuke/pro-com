@@ -17,6 +17,7 @@ end
 def persistence(n)
   n < 10 ? 0 : persistence(int_to_array(n).inject(&:*)) + 1
   # if n < 10
+  # 再帰関数を終了させる
   #   0
   # else
   #   persistence(int_to_array(n).inject(&:*)) + 1
@@ -27,10 +28,11 @@ def persistence_another(n)
   def rec(arr, cnt)
     p arr
     if arr.size == 1
+      # 明示的にreturnし、再帰関数を終了させる
       return cnt
     end
 
-    return rec(int_to_array(arr.inject(&:*)), cnt + 1)
+    rec(int_to_array(arr.inject(&:*)), cnt + 1)
   end
 
   rec(int_to_array(n), 0)
@@ -40,20 +42,22 @@ def int_to_array_another(int)
   int.to_s.split('').map(&:to_i)
 end
 
+p persistence(379737)
+
 # user     system      total        real
 # int_to_array      0.040000   0.000000   0.040000 (  0.039789)
 # another           0.190000   0.000000   0.190000 (  0.190669)
 
-Benchmark.bm(15) do |x|
-  n = 50000
-  x.report('int_to_array') {
-    n.times do |i|
-      int_to_array(i)
-    end
-  }
-  x.report('another') {
-    n.times do |i|
-      int_to_array_another(i)
-    end
-  }
-end
+# Benchmark.bm(15) do |x|
+#   n = 50000
+#   x.report('int_to_array') {
+#     n.times do |i|
+#       int_to_array(i)
+#     end
+#   }
+#   x.report('another') {
+#     n.times do |i|
+#       int_to_array_another(i)
+#     end
+#   }
+# end
