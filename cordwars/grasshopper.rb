@@ -11,7 +11,10 @@ end
 
 def summation_b(n)
   (1..n).sum
-  # (1..n).inject(:+)
+end
+
+def summation_c(n)
+  (1..n).inject(:+)
 end
 
 def summation(n)

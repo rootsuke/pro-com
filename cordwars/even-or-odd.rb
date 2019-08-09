@@ -2,7 +2,7 @@
 # 入出力例: even_or_odd(2) -> "Even"
 
 def even_or_odd(n)
-  puts n.even? ? "Even" : "Odd"
+  n.even? ? "Even" : "Odd"
 end
 
-even_or_odd(152)
+p even_or_odd(152)

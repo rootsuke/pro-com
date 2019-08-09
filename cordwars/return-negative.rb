@@ -2,8 +2,8 @@
 # 入出力例: make_negative(42) -> -42, make_negative(-42) -> -42
 
 def make_negative(n)
-  puts -n.abs
+  -n.abs
   # puts n > 0 ? -n : n
 end
 
-make_negative(-42)
+p make_negative(-42)
