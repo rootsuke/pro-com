@@ -10,8 +10,17 @@ def sum_of_digit(int)
   sum
 end
 
-def digital_root(n)
+def digital_root_a(n)
   n < 10 ? n : digital_root(sum_of_digit(n))
+end
+
+def digital_root(n)
+  if n % 9 == 0
+    n == 0 ? n : 9
+  else
+    n % 9
+  end
+  # (n % 9).zero? ? n.zero? ? n : 9 : n % 9
 end
 
 p digital_root(132189)
