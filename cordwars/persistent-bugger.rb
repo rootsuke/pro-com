@@ -26,7 +26,6 @@ end
 
 def persistence_another(n)
   def rec(arr, cnt)
-    p arr
     if arr.size == 1
       # 明示的にreturnし、再帰関数を終了させる
       return cnt

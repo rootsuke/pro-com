@@ -3,7 +3,7 @@
 
 def sum_of_digit(int)
   sum = 0
-  while int > 0    
+  while int > 0
     sum += int % 10
     int /= 10
   end

@@ -16,7 +16,7 @@ def count_positives_sum_negatives_a(arr)
 end
 
 def count_positives_sum_negatives(arr)
-  [arr.select(&:positive?).size, arr.select(&:negative?).sum]
+  arr.empty? ? [] : [arr.select(&:positive?).size, arr.select(&:negative?).sum]
 end
 
 p count_positives_sum_negatives([1, 2, 3, 4, -5, -6, -7])
