@@ -8,7 +8,7 @@ end
 
 def dna_strand(dna)
   dic = { "A" => "T", "T" => "A", "G" => "C", "C" => "G" }
-  dna.gsub(/[ATGC]/, "A" => "T", "T" => "A", "G" => "C", "C" => "G")
+  dna.gsub(/[ATGC]/, dic)
 end
 
 puts dna_strand("ATTGC")
